@@ -223,6 +223,72 @@ a:hover { color: var(--accent-hover); }
   border-radius: 20px;
 }
 
+/* ── Post intro ───────────────────────────────────────────────── */
+.post-intro {
+  background: var(--surface-low);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 20px;
+  margin-bottom: 36px;
+  font-size: 0.92rem;
+}
+
+.post-intro > p {
+  margin-bottom: 10px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.post-intro > p:last-child { margin-bottom: 0; }
+
+.o-que-e summary {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+
+.o-que-e summary::before {
+  content: "▸";
+  font-size: 0.7rem;
+  transition: transform 0.15s;
+}
+
+.o-que-e[open] summary::before { transform: rotate(90deg); }
+
+.o-que-e-body {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.o-que-e-body a { color: var(--accent); }
+
+/* ── Post sign-off ────────────────────────────────────────────── */
+.post-signoff {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin: 36px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.post-signoff a {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
 /* ── Post content ─────────────────────────────────────────────── */
 .post-content h2 {
   font-size: 1.15rem;

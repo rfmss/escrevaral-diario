@@ -17,9 +17,13 @@ layout: default
     {% endif %}
   </header>
 
+  {% include post-intro.html %}
+
   <div class="post-content">
     {{ content }}
   </div>
+
+  {% include post-signoff.html %}
 
   <footer class="post-footer">
 
