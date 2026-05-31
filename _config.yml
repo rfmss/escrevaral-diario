@@ -1,0 +1,32 @@
+title: "Escrevaral — Diário de Desenvolvimento"
+description: "O que está sendo construído, o que mudou e o que vem por aí na oficina literária."
+url: "https://diario.escrevaral.com"
+baseurl: ""
+lang: pt-BR
+
+author: "Escrevaral"
+email: "oi@escrevaral.com"
+escrevaral_url: "https://escrevaral.com"
+
+social:
+  instagram: "https://instagram.com/escrevaral"
+  bluesky: "https://bsky.app/profile/escrevaral.bsky.social"
+  youtube: "https://youtube.com/@escrevaral"
+  x: "https://x.com/escrevaral"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
+
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

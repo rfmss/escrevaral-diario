@@ -1,0 +1,30 @@
+---
+layout: default
+title: "Todas as entradas"
+---
+
+<section class="home">
+
+  <div class="home-intro">
+    <h1>O que está sendo construído</h1>
+    <p>Cada entrada registra uma versão do Escrevaral — o que mudou, o que foi corrigido e por que. Escrito para quem usa a ferramenta, não para quem desenvolve.</p>
+  </div>
+
+  <ol class="post-list" reversed>
+    {% for post in site.posts %}
+    <li class="post-item">
+      <a href="{{ post.url | relative_url }}" class="post-link">
+        {% if post.version %}<span class="post-version-badge">{{ post.version }}</span>{% endif %}
+        <span class="post-item-title">{{ post.title }}</span>
+      </a>
+      <time class="post-item-date" datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: "%-d de %B de %Y" }}
+      </time>
+      {% if post.excerpt %}
+      <p class="post-item-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+
+</section>

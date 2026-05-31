@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {% seo %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="{{ site.url }}" class="site-title">
+          <span class="site-name">Escrevaral</span>
+          <span class="site-sub">Diário de Desenvolvimento</span>
+        </a>
+        <a href="{{ site.escrevaral_url }}" class="header-cta" target="_blank" rel="noopener">
+          Usar o Escrevaral →
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-convite">
+        <p>O Escrevaral é uma oficina literária gratuita para escritoras e escritores brasileiros — funciona sem internet, sem conta, sem anúncios. <strong>Use, teste e conte o que achou.</strong> Toda sugestão chega diretamente em <a href="mailto:oi@escrevaral.com">oi@escrevaral.com</a> e é lida com atenção.</p>
+        <a href="{{ site.escrevaral_url }}" class="footer-btn" target="_blank" rel="noopener">Abrir o Escrevaral</a>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-social">
+          <a href="{{ site.social.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a href="{{ site.social.bluesky }}" target="_blank" rel="noopener" aria-label="Bluesky">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+            Bluesky
+          </a>
+          <a href="{{ site.social.youtube }}" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+            YouTube
+          </a>
+          <a href="{{ site.social.x }}" target="_blank" rel="noopener" aria-label="X / Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X
+          </a>
+        </div>
+
+        <div class="footer-meta">
+          <a href="{{ site.escrevaral_url }}" target="_blank" rel="noopener">escrevaral.com</a>
+          <span>·</span>
+          <a href="mailto:oi@escrevaral.com">oi@escrevaral.com</a>
+          <span>·</span>
+          <a href="{{ site.url }}/feed.xml">RSS</a>
+        </div>
+
+        <p class="footer-copy">© {{ 'now' | date: "%Y" }} Escrevaral</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
