@@ -4,17 +4,29 @@
 /* ── Tokens ───────────────────────────────────────────────────── */
 :root {
   --ink:        #1a1a1a;
-  --ink-soft:   #4a4a4a;
-  --ink-muted:  #888;
-  --surface:    #faf9f7;
-  --surface-low:#f2f0ec;
-  --border:     #e0ddd8;
-  --accent:     #2d6a4f;
-  --accent-hover:#1e4d38;
+  --ink-soft:   #40382e;
+  --ink-muted:  #7a7068;
+  --surface:    #f9f4ec;
+  --surface-low:#f2ebe0;
+  --border:     rgba(178, 163, 140, 0.38);
+  --accent:     #2a4840;
+  --accent-hover:#17362d;
   --font:       'Georgia', 'Times New Roman', serif;
   --font-ui:    system-ui, -apple-system, sans-serif;
   --max-w:      680px;
   --radius:     6px;
+}
+
+/* Vereda — tema escuro, espelha [data-theme="scriptorium"] do Escrevaral */
+[data-theme="vereda"] {
+  --ink:        #e6dcc8;
+  --ink-soft:   #c8b89a;
+  --ink-muted:  #a69580;
+  --surface:    #1a1411;
+  --surface-low:#1e1814;
+  --border:     #2e2420;
+  --accent:     #c97d32;
+  --accent-hover:#9e5e20;
 }
 
 /* ── Base ─────────────────────────────────────────────────────── */
@@ -28,6 +40,7 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
@@ -58,6 +71,22 @@ a:hover { color: var(--accent-hover); }
 
 .site-title {
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-logo {
+  display: block;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  background-color: var(--ink);
+  -webkit-mask: url("/assets/img/escrevaral-mark.svg") center / contain no-repeat;
+  mask: url("/assets/img/escrevaral-mark.svg") center / contain no-repeat;
+}
+
+.site-title-text {
   display: flex;
   flex-direction: column;
   gap: 2px;

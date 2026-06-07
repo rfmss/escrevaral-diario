@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <script>
+    (function () {
+      var hora = new Date().getHours();
+      if (hora >= 18 || hora < 6) {
+        document.documentElement.setAttribute("data-theme", "vereda");
+      }
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
@@ -16,8 +24,11 @@
     <div class="container">
       <div class="header-inner">
         <a href="{{ site.url }}" class="site-title">
-          <span class="site-name">Escrevaral</span>
-          <span class="site-sub">Diário de Desenvolvimento</span>
+          <span class="site-logo" aria-hidden="true"></span>
+          <span class="site-title-text">
+            <span class="site-name">Escrevaral</span>
+            <span class="site-sub">Diário de Desenvolvimento</span>
+          </span>
         </a>
         <a href="{{ site.escrevaral_url }}" class="header-cta" target="_blank" rel="noopener">
           Usar o Escrevaral →
